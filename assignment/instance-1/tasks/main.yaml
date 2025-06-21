@@ -1,0 +1,13 @@
+- name: install java
+  yum: 
+    name: java-17-amazon-corretto.x86_64
+    state: present
+
+- name: install tomcat
+  yum:
+    name: tomcat
+    state: present
+  notify: 
+    - copy war file
+    - owner and permission change
+    - service start tomcat

@@ -1,0 +1,18 @@
+---
+- hosts: devlinux[0]
+  user: mayur
+  connection: ssh
+  become: yes
+  gather_facts: yes
+  
+  roles:
+   - instance-1
+
+- hosts: devlinux[1]
+  user: mayur
+  connection: ssh
+  become: yes
+  gather_facts: yes
+
+  roles:
+   - instance-2

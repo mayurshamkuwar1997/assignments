@@ -1,0 +1,15 @@
+- name: copy war file
+  action: copy src=/home/mayur/sample.war dest=/var/lib/tomcat/webapps
+
+- name: owner and permission change
+  file: 
+    path: /var/lib/tomcat
+    owner: mayur
+    group: mayur
+    mode: "0777"
+    recurse: yes
+
+- name: service start tomcat
+  service:
+    name: tomcat
+    state: started

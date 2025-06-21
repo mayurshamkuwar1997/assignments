@@ -1,0 +1,5 @@
+- name: run the container with tomcat
+  command: docker run -dp 8080:8080 --name tomcat-7 tomcat:7
+
+- name: copy war file in tomcat-7 container
+  command: docker cp /home/mayur/sample.war tomcat-7:/usr/local/tomcat/webapps
